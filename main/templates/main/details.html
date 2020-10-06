@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    
+<div class="container">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-4 border-right mx-auto px-3">
+                <h3><img src="{{movie.image}}" alt="movie banner" width="250" height="300" class="img-fluid"></h3>
+                <i class="h5">{{movie.name}}</i>
+            </div>
+            <div class="col-md-8 mx-auto">
+                <h5>{{movie.description}}</h5>
+                <li> Directed by: {{movie.director}}</li>
+                <li>Cast: {{movie.cast}} </li>
+                <li>Release Date: {{movie.release_date}}</li>
+                <li>Average Rating: {{movie.averageRating}} </li>
+                <a href="{%url 'edit_movie' movie.id%}"><button class="btn btn-warning">Edit Movie</button></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content%}
